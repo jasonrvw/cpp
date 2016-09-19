@@ -27,6 +27,19 @@ void PrintIntro()
 	return;
 }
 
+
+// loop for the number of turns asking for guesses
+void PlayGame()
+{
+	constexpr int NUM_GUESS = 5;
+	for (int count = 1; count <= NUM_GUESS; count++)
+	{
+		cout << "Your guess was: " << GetGuess() << endl;
+	}
+	return;
+}
+
+
 string GetGuess()
 {
 	// get a guess from the player
@@ -37,18 +50,5 @@ string GetGuess()
 	return Guess;
 }
 
-// loop for the number of turns asking for guesses
-void PlayGame()
-{
-	constexpr int NUM_GUESS = 5;
-	for (int count = 1; count <= NUM_GUESS; count++)
-	{
-		string Guess = "";
-		GetGuess() = Guess;
-		cout << GetGuess();
-	}
-	cout << "Your guess was: " << GetGuess << endl;
-	return;
-}
 
 
