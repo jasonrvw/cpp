@@ -3,8 +3,11 @@
 
 using namespace std;
 
+int main();
+
 void PrintIntro();
 void PlayGame();
+bool AskToPlayAgain();
 string GetGuess();
 
 // the entry point of our application
@@ -12,6 +15,7 @@ int main()
 {
 	PrintIntro();
 	PlayGame();
+	AskToPlayAgain();
 	
 	cout << endl;
 	return 0;
@@ -40,6 +44,7 @@ void PlayGame()
 }
 
 
+
 string GetGuess()
 {
 	// get a guess from the player
@@ -50,5 +55,11 @@ string GetGuess()
 	return Guess;
 }
 
-
+bool AskToPlayAgain()
+{
+	cout << "Do you want to play again? ";
+	string Response = "";
+	getline(cin, Response);
+	return (Response[0] == 'y') || (Response[0] == 'Y');
+}
 
