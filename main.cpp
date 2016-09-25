@@ -57,8 +57,8 @@ std::string GetGuess()
 	
 	std::string Guess = "";
 	std::cout << std::endl;
-	std::cout << "Try " << GetCurrentTry << ". ";
-	std::cout << "My guess is: ";
+	std::cout << "Try " << GetCurrentTry;
+	std::cout << ". My guess is: ";
 	std::getline(std::cin, Guess);
 	return Guess;
 }
