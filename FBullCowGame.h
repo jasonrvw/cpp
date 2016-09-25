@@ -7,11 +7,13 @@ public:
 	void Reset(); //TODO make a more rich return value.
 	int GetMaxTries();
 	int GetCurrectTry();
-	struct GetGuess();
+	// struct GetGuess();
 	bool CheckGuessValidity(std::string); //TODO make a more rich return value.
-	bool bAnswerCorrect();
+	bool IsGameWon();
 	int NumberBulls();
 	int NumberCows();
+	std::string RequestNewWord();
+	std::string GetClue();
 
 
 private:
