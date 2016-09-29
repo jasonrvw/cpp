@@ -4,12 +4,19 @@
 
 class FBullCowGame {
 public:
-	void Reset(); //TODO make a more rich return value.
+	FBullCowGame(); //Constructor
+	
 	int GetMaxTries() const;
 	int GetCurrentTry() const;
+	bool IsGameWon() const;
+	
+	
 	// struct GetGuess();
 	bool CheckGuessValidity(std::string); //TODO make a more rich return value.
-	bool IsGameWon();
+	void Reset(); //TODO make a more rich return value.
+	
+	
+	
 	int NumberBulls();
 	int NumberCows();
 	std::string RequestNewWord();

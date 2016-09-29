@@ -15,7 +15,9 @@ FBullCowGame BCGame; // instantiate (create instance of) a new game.
 // the entry point of our application
 int main()
 {
-	do
+	std::cout << BCGame.GetCurrentTry();
+	
+		do
 	{
 		PrintIntro();
 		PlayGame();
