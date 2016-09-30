@@ -2,8 +2,7 @@
 
 FBullCowGame::FBullCowGame()
 {
-	MyCurrentTry = 666;
-	MyMaxTries = 666;
+	Reset();
 }
 
 int FBullCowGame::GetMaxTries() const { return MyMaxTries; } //getter
@@ -12,6 +11,8 @@ bool FBullCowGame::IsGameWon() const { return false; } //getter
 
 void FBullCowGame::Reset()
 {
+	MyCurrentTry = 1;
+	MyMaxTries = 8;
 	return;
 }
 

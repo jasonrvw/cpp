@@ -24,6 +24,7 @@ public:
 
 
 private:
-	int MyCurrentTry = 1;
-	int MyMaxTries = 5;
+	// see constructor for initialisation values
+	int MyCurrentTry;
+	int MyMaxTries;
 };
