@@ -1,44 +1,46 @@
 #include "FBullCowGame.h"
 
-FBullCowGame::FBullCowGame()
-{
-	Reset();
-}
+using FText = std::string;
+using int32 = int;
 
-int FBullCowGame::GetMaxTries() const { return MyMaxTries; } //getter
-int FBullCowGame::GetCurrentTry() const { return MyCurrentTry; } // getter
+FBullCowGame::FBullCowGame() { Reset(); }
+
+int32 FBullCowGame::GetMaxTries() const { return MyMaxTries; } //getter
+int32 FBullCowGame::GetCurrentTry() const { return MyCurrentTry; } // getter
 bool FBullCowGame::IsGameWon() const { return false; } //getter
 
 void FBullCowGame::Reset()
 {
+	constexpr int32 MAX_TRIES = 8;
+	MyMaxTries = MAX_TRIES;
+
 	MyCurrentTry = 1;
-	MyMaxTries = 8;
 	return;
 }
 
 
-bool FBullCowGame::CheckGuessValidity(std::string)
+bool FBullCowGame::CheckGuessValidity(FText)
 {
 	return false;
 }
 
 
-int FBullCowGame::NumberBulls()
+int32 FBullCowGame::NumberBulls()
 {
 	return 0;
 }
 
-int FBullCowGame::NumberCows()
+int32 FBullCowGame::NumberCows()
 {
 	return 0;
 }
 
-std::string FBullCowGame::RequestNewWord()
+FText FBullCowGame::RequestNewWord()
 {
-	return std::string();
+	return FText();
 }
 
-std::string FBullCowGame::GetClue()
+FText FBullCowGame::GetClue()
 {
-	return std::string();
+	return FText();
 }
