@@ -50,10 +50,11 @@ void PlayGame()
 		
 	for (int32 count = 1; count <= GetMaxTries; count++)
 	{
-		std::cout << "Your guess was: " << GetGuess() << std::endl; // TODO check for valid guess
-
-		// submit valid guess to the game
+		// submit valid guess to the game and receive counts
+		FBullCowCount BullCowCount = BCGame.SubmitGuess(GetGuess());
 		// print number of bulls and cows
+		std::cout << "Bulls = " << BullCowCount.Bulls;
+		std::cout << ". Cows = " << BullCowCount.Cows << "." << std::endl;
 	}
 	// TODO add a game summary
 	return;
