@@ -19,12 +19,16 @@ public:
 	int32 GetMaxTries() const;
 	int32 GetCurrentTry() const;
 	bool IsGameWon() const;
+	int32 GetHiddenWordLength() const;
+	bool CheckGuessValidity(FString) const; //TODO make a more rich return value.
 	
 	
 	// struct GetGuess();
 	void Reset(); 
-	bool CheckGuessValidity(FString); //TODO make a more rich return value.
+	
 	FBullCowCount SubmitGuess(FString);
+
+	// bool CheckGuessValidity(FText);
 	
 	
 	int32 NumberBulls();

@@ -8,16 +8,17 @@ FBullCowGame::FBullCowGame() { Reset(); }
 int32 FBullCowGame::GetMaxTries() const { return MyMaxTries; } //getter
 int32 FBullCowGame::GetCurrentTry() const { return MyCurrentTry; } // getter
 bool FBullCowGame::IsGameWon() const { return false; } //getter
+int32 FBullCowGame::GetHiddenWordLength() const { return MyHiddenWord.length(); }
+
 
 void FBullCowGame::Reset()
 {
 	constexpr int32 MAX_TRIES = 8;
+	const FString HIDDEN_WORD = "saturn";
+	
+	
 	MyMaxTries = MAX_TRIES;
-
-	const FString HIDDEN_WORD = "ant";
 	MyHiddenWord = HIDDEN_WORD;
-
-
 	MyCurrentTry = 1;
 	return;
 }
@@ -37,7 +38,7 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 		// compare letters to the hidden word
 		for (int32 GChar = 0; GChar < HiddenWordLength; GChar++) {
 			// if they match then
-			if (MyHiddenWord[MHWChar] == Guess[MHWChar]) {
+			if (MyHiddenWord[MHWChar] == Guess[GChar]) {
 				// if they're in the same place
 				if (MHWChar == GChar) {
 					// increment the bulls
@@ -54,10 +55,10 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
 }
 
 
-bool FBullCowGame::CheckGuessValidity(FText)
+/*bool FBullCowGame::CheckGuessValidity(FText) 
 {
 	return false;
-}
+} */
 
 
 int32 FBullCowGame::NumberBulls()
@@ -78,4 +79,9 @@ FText FBullCowGame::RequestNewWord()
 FText FBullCowGame::GetClue()
 {
 	return FText();
+}
+
+bool FBullCowGame::CheckGuessValidity(FString) const
+{
+	return false;
 }
