@@ -11,12 +11,12 @@ struct FBullCowCount
 	int32 Cows = 0;
 };
 
-enum class EWordStatus 
+enum class EGuessStatus 
 {
 	OK,
 	Not_Isogram,
-	Word_Too_Short,
-	Word_Too_Long,
+	Wrong_Length,
+	Not_Lowercase,
 };
 
 class FBullCowGame 
@@ -30,7 +30,8 @@ public:
 
 	bool IsGameWon() const;
 
-	EWordStatus CheckGuessValidity(FString) const; 
+
+	EGuessStatus CheckGuessValidity(FString) const; 
 	
 	
 	// struct GetGuess();

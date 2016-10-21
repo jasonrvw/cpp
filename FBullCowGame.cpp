@@ -81,7 +81,23 @@ FText FBullCowGame::GetClue()
 	return FText();
 }
 
-EWordStatus FBullCowGame::CheckGuessValidity(FString) const
+EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
-	return EWordStatus::OK; //TODO make actual error
+	if (false)
+	{
+		return EGuessStatus::Not_Isogram;
+	} 
+	else if (false)
+	{
+		return EGuessStatus::Not_Lowercase;
+	} 
+	else if (Guess.length() !=  GetHiddenWordLength())
+	{
+		return EGuessStatus::Wrong_Length;
+	}
+	else
+	{
+		return EGuessStatus::OK;
+	}
+	
 }
