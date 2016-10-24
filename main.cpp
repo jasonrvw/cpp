@@ -50,7 +50,7 @@ void PlayGame()
 	for (int32 count = 1; count <= GetMaxTries; count++) // TODO change from FOR to WHILE loop once we start validating answers
 	{
 		// submit valid guess to the game, and receive counts
-		FBullCowCount BullCowCount = BCGame.SubmitGuess(GetValidGuess());	
+		FBullCowCount BullCowCount = BCGame.SubmitValidGuess(GetValidGuess());	
 		
 		std::cout << "Bulls = " << BullCowCount.Bulls;
 		std::cout << ". Cows = " << BullCowCount.Cows << "." << "\n\n";

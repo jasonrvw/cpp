@@ -38,7 +38,7 @@ public:
 	// struct GetGuess();
 	void Reset(); 
 	
-	FBullCowCount SubmitGuess(FString);
+	FBullCowCount SubmitValidGuess(FString);
 
 	// bool CheckGuessValidity(FText);
 	
