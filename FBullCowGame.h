@@ -20,6 +20,7 @@ enum class EGuessStatus
 	Not_Lowercase,
 };
 
+
 class FBullCowGame 
 {
 public:
@@ -29,13 +30,11 @@ public:
 	int32 GetCurrentTry() const;	
 	int32 GetHiddenWordLength() const;
 	bool IsGameWon() const;
-
-
 	EGuessStatus CheckGuessValidity(FString) const; 
 	
 	
 	// struct GetGuess();
-	void Reset(); 
+	void Reset(); // TODO write richer return value
 	
 	FBullCowCount SubmitValidGuess(FString);
 
@@ -46,6 +45,7 @@ public:
 	int32 NumberCows();
 	FString RequestNewWord();
 	FString GetClue();
+	
 
 
 private:
