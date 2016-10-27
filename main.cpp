@@ -33,7 +33,7 @@ int main()
 // introduce the game
 void PrintIntro() 
 {
-	std::cout << "Welcome to Bulls and Cows, a fun word game." << std::endl;
+	std::cout << "\n\nWelcome to Bulls and Cows, a fun word game." << std::endl;
 	std::cout << "Can you guess the " << BCGame.GetHiddenWordLength();
 	std::cout << " letter isogram I'm thinking of?" << std::endl;
 	return;
@@ -46,8 +46,10 @@ void PlayGame()
 {
 	BCGame.Reset();
 	int32 GetMaxTries = BCGame.GetMaxTries();
-		
-	for (int32 count = 1; count <= GetMaxTries; count++) // TODO change from FOR to WHILE loop once we start validating answers
+	
+	// loop asking for guesses while the game
+	// is NOT won and there are still tries remaining
+	while ( !BCGame.IsGameWon() && BCGame.GetCurrentTry() <= GetMaxTries) 
 	{
 		// submit valid guess to the game, and receive counts
 		FBullCowCount BullCowCount = BCGame.SubmitValidGuess(GetValidGuess());	
