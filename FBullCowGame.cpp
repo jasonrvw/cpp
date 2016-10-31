@@ -88,9 +88,9 @@ FText FBullCowGame::GetClue()
 
 EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
-	if (false)
+	if (!IsIsogram(Guess))
 	{
-		return EGuessStatus::Not_Isogram; // TODO write function
+		return EGuessStatus::Not_Isogram;
 	} 
 	else if (false)
 	{
@@ -105,5 +105,10 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 		return EGuessStatus::OK;
 	}
 	
+}
+
+bool FBullCowGame::IsIsogram(FString) const
+{
+	return true;
 }
 
